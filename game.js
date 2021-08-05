@@ -2,6 +2,7 @@ let quizContainer= document.getElementById("quiz-container");
 let question = document.getElementById("question");
 let currentQuestion = {};
 let availableQuestions = [];
+let options =document.getElementsByClassName("option");
 let questionPrefix = document.getElementsByClassName("prefix");
 let questionOption = document.getElementsByClassName("option");
 
@@ -40,14 +41,20 @@ function startGame (){
 }
 
 function showQuestions () {
-    const output =[];
-    const answers = {};
-
     for(i = 0; i < myQuestions.length; i++){
             currentQuestion = availableQuestions[i];
             question.innerText = currentQuestion.question;
     }
-    }
+    
+}
+
+function showOptions () {
+        const number = options.dataset["number"];
+        options.innerText = currentQuestion["option" + number];
+        console.log(options);
+    
+        /*option.innerText = currentQuestion.option;*/
+}
 
 startGame();
 
