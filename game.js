@@ -45,10 +45,14 @@ function showQuestions () {
 }
 
 function showOptions () {
-        const number = options.dataset["number"];
-        console.log(number);
-        options.innerText = currentQuestion["option" + number];
-        console.log(options);
+        options.forEach(option => {
+            const number = options.dataset["number"];
+            option.innerText = currentQuestion["option" + number];
+        })
+        
+        
+        
+        
     
         /*option.innerText = currentQuestion.option;*/
 }
