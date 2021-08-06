@@ -8,8 +8,6 @@ let options = Array.from(document.getElementsByClassName("option"));
 let questionPrefix = document.getElementsByClassName("prefix");
 let questionOption = document.getElementsByClassName("option");
 
-console.log(options);
-
 let myQuestions = [
     {
         question: "Which of the following is the most appropriate first step for managing an intact-male cat that is urinating on the carpet?",
@@ -233,9 +231,6 @@ function startGame (){
 
 function showQuestions () {
 
-    if (questionCounter > MAX_QUESTIONS) {
-        endGame();
-    }
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
     question.innerText = currentQuestion.question;
@@ -250,10 +245,17 @@ function showQuestions () {
 
 options.forEach(option => {
     option.addEventListener("click", e => {
-        console.log(e.target);
+        const selectedOption = e.target;
+        const selectedAnswer = selectedOption.dataset["number"];
+        showQuestions();
     });
 })
 
-function endGame() {}
+function endGame() {
+    if (questionCounter > MAX_QUESTIONS || availableQuestions.length == 0) {
+        return window.location.assign(end.html);
+    }
+    
+}
 
 startGame();
