@@ -235,7 +235,7 @@ function showQuestions () {
 
     if (questionCounter > MAX_QUESTIONS) {
         endGame();
-    } else {
+    }
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
     question.innerText = currentQuestion.question;
@@ -244,13 +244,16 @@ function showQuestions () {
             const number = option.dataset["number"];
             option.innerText = currentQuestion["option" + number];
         })
+    availableQuestions.splice(questionIndex, 1);
     }
-}
 
-function chooseOne () {}
+
+options.forEach(option => {
+    option.addEventListener("click", e => {
+        console.log(e.target);
+    });
+})
+
 function endGame() {}
 
 startGame();
-
-    
-    
