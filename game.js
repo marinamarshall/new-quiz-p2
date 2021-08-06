@@ -34,27 +34,26 @@ let myQuestions = [
 function startGame (){
     availableQuestions = [...myQuestions];
 
-    console.log(availableQuestions);
-
     showQuestions();
         
 }
 
 function showQuestions () {
-    for(i = 0; i < myQuestions.length; i++){
-            currentQuestion = availableQuestions[i];
-            question.innerText = currentQuestion.question;
-    }
-    
+    const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+    currentQuestion = availableQuestions[questionIndex];
+    question.innerText = currentQuestion.question;
 }
 
 function showOptions () {
         const number = options.dataset["number"];
+        console.log(number);
         options.innerText = currentQuestion["option" + number];
         console.log(options);
     
         /*option.innerText = currentQuestion.option;*/
 }
+
+function chooseOne () {}
 
 startGame();
 
