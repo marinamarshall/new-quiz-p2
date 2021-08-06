@@ -2,9 +2,13 @@ let quizContainer= document.getElementById("quiz-container");
 let question = document.getElementById("question");
 let currentQuestion = {};
 let availableQuestions = [];
-let options =document.getElementsByClassName("option");
+let questionCounter = 0;
+let MAX_QUESTIONS= 3;
+let options = Array.from(document.getElementsByClassName("option"));
 let questionPrefix = document.getElementsByClassName("prefix");
 let questionOption = document.getElementsByClassName("option");
+
+console.log(options);
 
 let myQuestions = [
     {
@@ -39,25 +43,23 @@ function startGame (){
 }
 
 function showQuestions () {
+
+    if (questionCounter > MAX_QUESTIONS) {
+        endGame();
+    } else {
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
     question.innerText = currentQuestion.question;
-}
-
-function showOptions () {
-        options.forEach(option => {
-            const number = options.dataset["number"];
+    
+    options.forEach(option => {
+            const number = option.dataset["number"];
             option.innerText = currentQuestion["option" + number];
         })
-        
-        
-        
-        
-    
-        /*option.innerText = currentQuestion.option;*/
+    }
 }
 
 function chooseOne () {}
+function endGame() {}
 
 startGame();
 
