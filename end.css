@@ -1,0 +1,18 @@
+.btn-end {
+    text-decoration: none;
+    text-align: center;
+    font-size: 2.4rem;
+    border: 1px solid rgb(46, 71, 87);
+    border-radius: 4px;
+    padding: 1.5rem 1rem;
+    max-width: 100%;
+    margin-bottom: 2rem;
+    background-color: rgba(52, 71, 87, 0.3);
+}
+
+.btn-end:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1rem 0 rgba(92, 175, 176, 0.5);
+    transform: translate(-0.1rem);
+    transition: transform 200ms;
+}

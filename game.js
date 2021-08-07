@@ -1,13 +1,32 @@
-let quizContainer= document.getElementById("quiz-container");
-let question = document.getElementById("question");
-let currentQuestion = {};
-let availableQuestions = [];
-let questionCounter = 0;
-let MAX_QUESTIONS= 3;
-let options = Array.from(document.getElementsByClassName("option"));
-let questionPrefix = document.getElementsByClassName("prefix");
-let questionOption = document.getElementsByClassName("option");
+// Tutorials used for inspiration and guidance
+// https://www.youtube.com/watch?v=f4fB9Xg2JEY
+// https://www.youtube.com/watch?v=LQGTb112N_c
 
+// https://www.youtube.com/watch?v=rFWbAj40JrQ
+// https://www.youtube.com/watch?v=IK257Ln0MZc
+// https://www.youtube.com/watch?v=zZdQGs62cR8
+// https://www.youtube.com/watch?v=_LYxkClHnV0
+// https://www.youtube.com/watch?v=BOQLbu_Crc0
+// https://www.youtube.com/watch?v=4bctmtuZVcM
+// https://www.youtube.com/watch?v=o3MF_JmQxYg
+
+
+
+
+// Get references to interactive elements
+/*let questionYouAreOn = document.getElementById("questionYouAreOn");
+let question = document.getElementById("question");
+let progressOuterSpan = document.getElementById("progressOuterSpan");
+let progressInnerSpan = document.getElementById("progressInnerSpan");
+let score = document.getElementById("score");
+
+
+let question = document.getElementById("question");
+let questionNumber = document.getElementsByClassName("question-number");
+let questionText = document.getElementsByClassName("question-text");
+*/
+
+/* Declare myQuestions array */ 
 let myQuestions = [
     {
         question: "Which of the following is the most appropriate first step for managing an intact-male cat that is urinating on the carpet?",
@@ -221,41 +240,72 @@ let myQuestions = [
     }
     ];
 
+let quizContainer= document.getElementById("quiz-container");
+let question = document.getElementById("question");
+let questionPrefix = document.getElementsByClassName("prefix");
+let options = Array.from(document.getElementsByClassName("option"));
+let currentQuestion = {};
+let availableQuestions = [];
+let acceptingSubmissions = false;
+let questionCounter = 0;
+let score = 0;
+const MAX_QUESTIONS= 3;
+const correctCount = 10;
 
-function startGame (){
+function beginQuiz (){
     availableQuestions = [...myQuestions];
-
-    showQuestions();
+    questionCounter = 0;
+    score = 0;
+    getQuestion();
         
 }
 
-function showQuestions () {
+function getQuestion () {
 
-    const questionIndex = Math.floor(Math.random() * availableQuestions.length);
-    currentQuestion = availableQuestions[questionIndex];
-    question.innerText = currentQuestion.question;
-    
-    options.forEach(option => {
+    questionCounter++;
+
+    if (questionCounter > MAX_QUESTIONS || availableQuestions.length == 0) {
+        endGame();
+    } else {
+        const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+        currentQuestion = availableQuestions[questionIndex];
+        question.innerText = currentQuestion.question;
+
+        options.forEach(option => {
             const number = option.dataset["number"];
             option.innerText = currentQuestion["option" + number];
         })
     availableQuestions.splice(questionIndex, 1);
+    acceptingSubmissions = true;
     }
+}
 
 
 options.forEach(option => {
     option.addEventListener("click", e => {
+        if(!acceptingSubmissions) return;
+        acceptingSubmissions = false;
+
         const selectedOption = e.target;
         const selectedAnswer = selectedOption.dataset["number"];
-        showQuestions();
+        
+        /*let classToApply = selectedAnswer == currentQuestion.answer ? "correctAnswer" : "incorrectAnswer"*/
+
+        /*if (classToApply === "incorrect") {
+            
+            
+        } else {
+         */
+        getQuestion();   
     });
 })
 
 function endGame() {
-    if (questionCounter > MAX_QUESTIONS || availableQuestions.length == 0) {
-        return window.location.assign(end.html);
-    }
-    
+        
+        window.location.href = "end.html";
+
+
 }
 
-startGame();
+
+beginQuiz();

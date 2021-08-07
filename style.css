@@ -1,0 +1,75 @@
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/font-size */
+/* https://teamtreehouse.com/community/what-is-the-difference-between-and-root-functionalities */
+
+/* Make root font size 10px*/
+:root {
+    font-size: 62.5%;
+    background-color: rgba(139, 190, 177, 0.3);
+}
+
+* {
+    color: #3a3a3a;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2 {
+    font-size: 5.4rem;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    color: #3a3a3a;
+    font-size: 2.8rem;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+/* https://www.freecodecamp.org/news/learn-css-flexbox/ */
+
+.container {
+    height: 33vh;
+    width: 100wh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    text-decoration: none;
+    text-align: center;
+    font-size: 2.4rem;
+    border: 1px solid rgb(46, 71, 87);
+    border-radius: 4px;
+    padding: 1.5rem 1rem;
+    max-width: 100%;
+    margin-top: 2.5rem;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+}
+
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1rem 0 rgba(92, 175, 176, 0.5);
+    transform: translate(-0.1rem);
+    transition: transform 200ms;
+}
+
+.fa-flask {
+    font-size: 7.2rem;
+}
