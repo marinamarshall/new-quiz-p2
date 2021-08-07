@@ -266,6 +266,7 @@ function getQuestion () {
         const questionIndex = Math.floor(Math.random() * availableQuestions.length);
         currentQuestion = availableQuestions[questionIndex];
         question.innerText = currentQuestion.question;
+        
 
         options.forEach(option => {
             const number = option.dataset["number"];
@@ -289,19 +290,24 @@ options.forEach(option => {
 
         if(selectedAnswer == currentQuestion.answer) {
             option.parentNode.setAttribute("style", "background-color: #00FF00");
+            setTimeout(getQuestion, 2000);
+            setTimeout(removeClass, 2000);
+            
+            
+            
         } else if (selectedAnswer !== currentQuestion.answer) {
             option.parentNode.setAttribute("style", "background-color: #ff0000");
+            setTimeout(getQuestion, 2000);
+            setTimeout(removeClass, 2000);
+            
+            
         } else {
             return;
         }
 
-        function timeFunction() {
-            setTimeout(() => {
-                getQuestion
-            }, 2000);
+        function removeClass() {
+            option.parentNode.setAttribute("style", "background-color: #fffffff");
         }
-        
-        function removeClass () {}
     
     });
 })
