@@ -294,17 +294,11 @@ options.forEach(option => {
         if(selectedAnswer == currentQuestion.answer) {
             option.parentNode.setAttribute("style", "background-color: #00FF00");
         } else if (selectedAnswer !== currentQuestion.answer) {
-            option.parentNode.setAttribute("style", "background-color: #00FF00");
-        }
-        console.log(selectedAnswer == currentQuestion.answer);
-        
-        /*let classToApply = selectedAnswer == currentQuestion.answer ? "correctAnswer" : "incorrectAnswer"*/
-
-        /*if (classToApply === "incorrect") {
-            
-            
+            option.parentNode.setAttribute("style", "background-color: #ff0000");
         } else {
-         */
+            return;
+        }
+        
         getQuestion();   
     });
 })
