@@ -10,16 +10,12 @@
 // https://www.youtube.com/watch?v=4bctmtuZVcM
 // https://www.youtube.com/watch?v=o3MF_JmQxYg
 
-
-
-
 // Get references to interactive elements
 /*let questionYouAreOn = document.getElementById("questionYouAreOn");
 let question = document.getElementById("question");
 let progressOuterSpan = document.getElementById("progressOuterSpan");
 let progressInnerSpan = document.getElementById("progressInnerSpan");
 let score = document.getElementById("score");
-
 
 let question = document.getElementById("question");
 let questionNumber = document.getElementsByClassName("question-number");
@@ -298,10 +294,18 @@ options.forEach(option => {
         } else {
             return;
         }
+
+        function timeFunction() {
+            setTimeout(() => {
+                getQuestion
+            }, 2000);
+        }
         
-        getQuestion();   
+        function removeClass () {}
+    
     });
 })
+
 
 function endGame() {
         window.location.href = "end.html";
