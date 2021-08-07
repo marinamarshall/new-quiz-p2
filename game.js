@@ -286,8 +286,17 @@ options.forEach(option => {
         if(!acceptingSubmissions) return;
         acceptingSubmissions = false;
 
+        
+
         const selectedOption = e.target;
         const selectedAnswer = selectedOption.dataset["number"];
+
+        if(selectedAnswer == currentQuestion.answer) {
+            option.parentNode.setAttribute("style", "background-color: #00FF00");
+        } else if (selectedAnswer !== currentQuestion.answer) {
+            option.parentNode.setAttribute("style", "background-color: #00FF00");
+        }
+        console.log(selectedAnswer == currentQuestion.answer);
         
         /*let classToApply = selectedAnswer == currentQuestion.answer ? "correctAnswer" : "incorrectAnswer"*/
 
@@ -301,11 +310,7 @@ options.forEach(option => {
 })
 
 function endGame() {
-        
         window.location.href = "end.html";
-
-
 }
-
 
 beginQuiz();
