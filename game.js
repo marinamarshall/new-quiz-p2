@@ -289,18 +289,13 @@ options.forEach(option => {
         const selectedAnswer = selectedOption.dataset["number"];
 
         if(selectedAnswer == currentQuestion.answer) {
-            option.parentNode.setAttribute("style", "background-color: #00FF00");
+            option.parentNode.setAttribute("style", "background-color: #BCFFB9");
             setTimeout(getQuestion, 2000);
-            setTimeout(removeClass, 2000);
-            
-            
-            
+            setTimeout(removeClass, 2000); 
         } else if (selectedAnswer !== currentQuestion.answer) {
-            option.parentNode.setAttribute("style", "background-color: #ff0000");
+            option.parentNode.setAttribute("style", "background-color: #FE2727");
             setTimeout(getQuestion, 2000);
             setTimeout(removeClass, 2000);
-            
-            
         } else {
             return;
         }
