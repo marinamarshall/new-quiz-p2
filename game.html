@@ -12,13 +12,8 @@
 </head>
 <body>
     <div id="letUserKnowInteractively">
-        <div>
-            <p id="score"> 0</p>
-        </div>
-        <div>
-        <span id="progressOuterSpan">
-        <span id="progressInnerSpan">
-        </div>
+        <span id="progressOuterSpan"></span>
+        <span id="progressInnerSpan"></span>
     </div>        
     <div id="quiz-container">
         <h3 id="question">
@@ -36,6 +31,10 @@
         <p class="prefix">C</p>
         <p class="option" data-number="3" >Option 3</p>
         </div>
+    </div>
+    <div id="score-area">
+        <p class="scores">Correct Answers <span id="score">0</span></p>
+        <p class="scores">Incorrect Answers <span id="score">0</span></p>
     </div>
     <script src="assets/js/game.js"></script>
 </body>
