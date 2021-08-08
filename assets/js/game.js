@@ -10,18 +10,6 @@
 // https://www.youtube.com/watch?v=4bctmtuZVcM
 // https://www.youtube.com/watch?v=o3MF_JmQxYg
 
-// Get references to interactive elements
-/*let questionYouAreOn = document.getElementById("questionYouAreOn");
-let question = document.getElementById("question");
-let progressOuterSpan = document.getElementById("progressOuterSpan");
-let progressInnerSpan = document.getElementById("progressInnerSpan");
-let score = document.getElementById("score");
-
-let question = document.getElementById("question");
-let questionNumber = document.getElementsByClassName("question-number");
-let questionText = document.getElementsByClassName("question-text");
-*/
-
 /* Declare myQuestions array */ 
 let myQuestions = [
     {
@@ -236,6 +224,11 @@ let myQuestions = [
     }
     ];
 
+// Get references to interactive elements    
+
+let score = document.getElementById("score");
+let progressOuterSpan = document.getElementById("progressOuterSpan");
+let progressInnerSpan = document.getElementById("progressInnerSpan");    
 let quizContainer= document.getElementById("quiz-container");
 let question = document.getElementById("question");
 let questionPrefix = document.getElementsByClassName("prefix");
@@ -245,7 +238,7 @@ let availableQuestions = [];
 let acceptingSubmissions = false;
 let questionCounter = 0;
 let score = 0;
-const MAX_QUESTIONS= 3;
+const MAX_QUESTIONS= 10;
 const correctCount = 10;
 
 function beginQuiz (){
