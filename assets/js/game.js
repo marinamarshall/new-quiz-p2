@@ -226,7 +226,8 @@ let myQuestions = [
 
 // Get references to interactive elements    
 
-let score = document.getElementById("score");
+let scoreText = document.getElementById("score");
+/* const questionCounterText = document.getElementById("questionCounter"); */ 
 let progressOuterSpan = document.getElementById("progressOuterSpan");
 let progressInnerSpan = document.getElementById("progressInnerSpan");    
 let quizContainer= document.getElementById("quiz-container");
@@ -252,8 +253,10 @@ function beginQuiz (){
 function getQuestion () {
 
     questionCounter++;
+    questionCounterText.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
 
     if (questionCounter > MAX_QUESTIONS || availableQuestions.length == 0) {
+        localStorage.setItem("mostRecentScore", score);
         endGame();
     } else {
         const questionIndex = Math.floor(Math.random() * availableQuestions.length);
@@ -283,6 +286,7 @@ options.forEach(option => {
 
         if(selectedAnswer == currentQuestion.answer) {
             option.parentNode.setAttribute("style", "background-color: #BCFFB9");
+            incrementScore(correctCount);
             setTimeout(getQuestion, 2000);
             setTimeout(removeClass, 2000); 
         } else if (selectedAnswer !== currentQuestion.answer) {
@@ -296,9 +300,15 @@ options.forEach(option => {
         function removeClass() {
             option.parentNode.setAttribute("style", "background-color: #fffffff");
         }
+        
+    incrementScore = num => {
+    score+= num;
+    scoreText.innerText = score;
+}
     
     });
 })
+
 
 
 function endGame() {
