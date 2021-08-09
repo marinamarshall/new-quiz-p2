@@ -284,13 +284,13 @@ options.forEach(option => {
             incrementScore(correctCount);
             setTimeout(getQuestion, 2000);
             setTimeout(removeClass, 2000);
-            increaseProgressBar();
+            
             
         } else if (selectedAnswer !== currentQuestion.answer) {
             option.parentNode.setAttribute("style", "background-color: #FE2727");
             setTimeout(getQuestion, 2000);
             setTimeout(removeClass, 2000);
-            increaseProgressBar();
+            
 
         } else {
             return;
@@ -304,6 +304,8 @@ options.forEach(option => {
     score+= num;
     scoreText.innerText = score;
 }
+
+increaseProgressBar();
     
     });
 })
@@ -311,9 +313,6 @@ options.forEach(option => {
 let width = 10;
 function increaseProgressBar() {
         let progressBar = document.getElementById("progressInnerDiv");
-        
-        /*let progressBarIncrement = setInterval(increaseBar, 1);*/
-        
             if (width < 100) {
                 width +=10;
                 progressBar.style.width = width + "%";
