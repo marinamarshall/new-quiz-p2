@@ -284,12 +284,13 @@ options.forEach(option => {
             option.parentNode.setAttribute("style", "background-color: #BCFFB9");
             setTimeout(getQuestion, 2000);
             setTimeout(removeClass, 2000);
-            
+            incrementCorrectScoreDisplay();
             
         } else if (selectedAnswer !== currentQuestion.answer) {
             option.parentNode.setAttribute("style", "background-color: #FE2727");
             setTimeout(getQuestion, 2000);
             setTimeout(removeClass, 2000);
+            incrementIncorrectScoreDisplay();
 
         } else {
             return;
@@ -313,16 +314,16 @@ function increaseProgressBar() {
             }
 }
 
-function incrementCorrectScoreText() {
-    if (selectedAnswer !== currentQuestion.answer) {
-        correctScoreText.innerHTML = score++;
-    }
+function incrementCorrectScoreDisplay() {
+
+    let previousScore = document.getElementById("correct-score").innerText;
+    document.getElementById("correct-score").innerText = ++previousScore;     
 }
 
-function incrementIncorrectScoreText(){
-    if (selectedAnswer !== currentQuestion.answer) {
-        incorrectScoreText.innerHTML = score++;
-    }
+function incrementIncorrectScoreDisplay(){
+
+    let previousScore = document.getElementById("incorrect-score").innerText;
+    document.getElementById("incorrect-score").innerText = ++previousScore;  
 }
 
 function endGame() {
