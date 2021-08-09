@@ -226,7 +226,8 @@ let myQuestions = [
 
 // Get references to interactive elements    
 
-let scoreText = document.getElementById("score");
+let correctScoreText = document.getElementById("correct-score");
+let incorrectScoreText = document.getElementById("incorrect-score");
 /* const questionCounterText = document.getElementById("questionCounter"); */ 
 let progressOuterSpan = document.getElementById("progressOuterDiv");
 let progressInnerSpan = document.getElementById("progressInnerDiv");    
@@ -239,22 +240,22 @@ let availableQuestions = [];
 let acceptingSubmissions = false;
 let questionCounter = 0;
 let score = 0;
-const MAX_QUESTIONS= 10;
+const maxQuestions= 10;
 const correctCount = 10;
 
 function beginQuiz (){
     availableQuestions = [...myQuestions];
     questionCounter = 0;
     score = 0;
-    getQuestion();
-    questionCounterText.innerText = `${questionCounter}/${MAX_QUESTIONS}`;   
+    getQuestion();   
 }
 
 function getQuestion () {
 
     questionCounter++;
+    questionCounterText.innerText = `${questionCounter}/${maxQuestions}`;
 
-    if (questionCounter > MAX_QUESTIONS || availableQuestions.length == 0) {
+    if (questionCounter > maxQuestions || availableQuestions.length == 0) {
         localStorage.setItem("mostRecentScore", score);
         endGame();
     } else {

@@ -67,8 +67,21 @@ h1, h2, h3 {
 }
 #progressInnerDiv {
     background-color: rgb(58, 162, 219);
-    width:10%;
+    width:0%;
     height: 7rem;
+}
+
+#score-area {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+.score-display {
+    text-align: center;
+    font-size: 5rem;
+    margin-left: 4rem;
+    
 }
 
 /* Heads Up Display */
