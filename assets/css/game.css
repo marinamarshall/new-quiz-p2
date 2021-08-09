@@ -3,7 +3,6 @@ p {
 }
 
 h1, h2, h3 {
-    margin-top: 2rem;
     padding: 5rem;
 }
 
@@ -53,6 +52,23 @@ h1, h2, h3 {
 .correct {
     background-color: greenyellow;
     color:rgb(255, 255, 255)
+}
+#letUserKnowInteractively {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+#progressOuterDiv {
+    border: 0.1rem solid rgb(72, 96, 115);
+    background-color: transparent;
+    width: 20rem;
+}
+#progressInnerDiv {
+    background-color: rgb(58, 162, 219);
+    width:10%;
+    height: 7rem;
 }
 
 /* Heads Up Display */

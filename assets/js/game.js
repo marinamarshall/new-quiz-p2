@@ -228,8 +228,8 @@ let myQuestions = [
 
 let scoreText = document.getElementById("score");
 /* const questionCounterText = document.getElementById("questionCounter"); */ 
-let progressOuterSpan = document.getElementById("progressOuterSpan");
-let progressInnerSpan = document.getElementById("progressInnerSpan");    
+let progressOuterSpan = document.getElementById("progressOuterDiv");
+let progressInnerSpan = document.getElementById("progressInnerDiv");    
 let quizContainer= document.getElementById("quiz-container");
 let question = document.getElementById("question");
 let questionPrefix = document.getElementsByClassName("prefix");
@@ -247,13 +247,12 @@ function beginQuiz (){
     questionCounter = 0;
     score = 0;
     getQuestion();
-        
+    questionCounterText.innerText = `${questionCounter}/${MAX_QUESTIONS}`;   
 }
 
 function getQuestion () {
 
     questionCounter++;
-    questionCounterText.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
 
     if (questionCounter > MAX_QUESTIONS || availableQuestions.length == 0) {
         localStorage.setItem("mostRecentScore", score);
@@ -262,7 +261,6 @@ function getQuestion () {
         const questionIndex = Math.floor(Math.random() * availableQuestions.length);
         currentQuestion = availableQuestions[questionIndex];
         question.innerText = currentQuestion.question;
-        
 
         options.forEach(option => {
             const number = option.dataset["number"];
@@ -273,13 +271,10 @@ function getQuestion () {
     }
 }
 
-
 options.forEach(option => {
     option.addEventListener("click", e => {
         if(!acceptingSubmissions) return;
         acceptingSubmissions = false;
-
-        
 
         const selectedOption = e.target;
         const selectedAnswer = selectedOption.dataset["number"];
@@ -288,11 +283,15 @@ options.forEach(option => {
             option.parentNode.setAttribute("style", "background-color: #BCFFB9");
             incrementScore(correctCount);
             setTimeout(getQuestion, 2000);
-            setTimeout(removeClass, 2000); 
+            setTimeout(removeClass, 2000);
+            increaseProgressBar();
+            
         } else if (selectedAnswer !== currentQuestion.answer) {
             option.parentNode.setAttribute("style", "background-color: #FE2727");
             setTimeout(getQuestion, 2000);
             setTimeout(removeClass, 2000);
+            increaseProgressBar();
+
         } else {
             return;
         }
@@ -309,8 +308,17 @@ options.forEach(option => {
     });
 })
 
-
-
+let width = 10;
+function increaseProgressBar() {
+        let progressBar = document.getElementById("progressInnerDiv");
+        
+        /*let progressBarIncrement = setInterval(increaseBar, 1);*/
+        
+            if (width < 100) {
+                width +=10;
+                progressBar.style.width = width + "%";
+            }
+}
 function endGame() {
         window.location.href = "end.html";
 }
