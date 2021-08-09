@@ -285,6 +285,7 @@ options.forEach(option => {
             setTimeout(getQuestion, 2000);
             setTimeout(removeClass, 2000);
             
+            
         } else if (selectedAnswer !== currentQuestion.answer) {
             option.parentNode.setAttribute("style", "background-color: #FE2727");
             setTimeout(getQuestion, 2000);
@@ -298,11 +299,6 @@ options.forEach(option => {
             option.parentNode.setAttribute("style", "background-color: #fffffff");
         }
         
-    incrementScore = num => {
-    score+= num;
-    scoreText.innerText = score;
-}
-
 increaseProgressBar();
     
     });
@@ -316,6 +312,19 @@ function increaseProgressBar() {
                 progressBar.style.width = width + "%";
             }
 }
+
+function incrementCorrectScoreText() {
+    if (selectedAnswer !== currentQuestion.answer) {
+        correctScoreText.innerHTML = score++;
+    }
+}
+
+function incrementIncorrectScoreText(){
+    if (selectedAnswer !== currentQuestion.answer) {
+        incorrectScoreText.innerHTML = score++;
+    }
+}
+
 function endGame() {
         window.location.href = "end.html";
 }
