@@ -281,16 +281,13 @@ options.forEach(option => {
 
         if(selectedAnswer == currentQuestion.answer) {
             option.parentNode.setAttribute("style", "background-color: #BCFFB9");
-            incrementScore(correctCount);
             setTimeout(getQuestion, 2000);
             setTimeout(removeClass, 2000);
-            
             
         } else if (selectedAnswer !== currentQuestion.answer) {
             option.parentNode.setAttribute("style", "background-color: #FE2727");
             setTimeout(getQuestion, 2000);
             setTimeout(removeClass, 2000);
-            
 
         } else {
             return;
