@@ -14,25 +14,19 @@
     box-sizing: border-box;
 }
 
-h1,
-h2 {
+h1,h2 {
+    align-items: center;
     font-size: 5.4rem;
-    margin-bottom: 2rem;
     text-align: center;
-}
-
-h3 {
     color: #3a3a3a;
-    font-size: 2.8rem;
-    text-align: center;
     width: 100%;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 /* https://www.freecodecamp.org/news/learn-css-flexbox/ */
 
 .container {
-    height: 33vh;
+    height: 100vh;
     width: 100wh;
     margin: 0 auto;
     display: flex;
@@ -41,7 +35,7 @@ h3 {
     max-width: 80rem;
 }
 
-.flex-center {
+/*.flex-center {
     justify-content: center;
     align-items: center;
 }
@@ -50,16 +44,19 @@ h3 {
     display: flex;
     flex-direction: column;
 }
+*/
 
 .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
     text-align: center;
     font-size: 2.4rem;
     border: 1px solid rgb(46, 71, 87);
     border-radius: 4px;
-    padding: 1.5rem 1rem;
-    max-width: 100%;
-    margin-top: 2.5rem;
+    padding: 0.5rem;
+    max-width: 50%;
     margin: 0 auto;
     background-color: rgb(255, 255, 255);
 }
