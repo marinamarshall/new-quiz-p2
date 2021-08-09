@@ -6,6 +6,12 @@ h1, h2, h3 {
     padding: 5rem;
 }
 
+#letUserKnowInteractively > p {
+    font-size: 2.4rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
 .justify-center {
     justify-content: center;
 }
@@ -69,13 +75,12 @@ h1, h2, h3 {
     border: 0.1rem solid rgb(72, 96, 115);
     background-color: transparent;
     width: 20rem;
-    border-radius: 0.5rem;
 }
+
 #progressInnerDiv {
-    background-color: rgb(58, 162, 219);
+    background-color: rgba(92, 175, 176, 0.8);
     width:0%;
     height: 7rem;
-    border-radius: 0.5rem;
 }
 
 #score-area {
@@ -87,38 +92,6 @@ h1, h2, h3 {
 .score-display {
     text-align: center;
     font-size: 5rem;
-    margin-left: 4rem;
-    
-}
-
-/* Heads Up Display */
-
-#hud {
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 4rem;
-}
-
-.hud-prefix {
-    text-align: center;
-    font-size: 2.4rem;
-}
-
-.hud-main-text {
-    text-align: center;
-}
-
-#progressBar {
-    width: 25rem;
-    height: 5rem;
-    border: 0.3rem solid #3a3a3a;
-    margin-top: 1.5rem;
-    
-}
-
-#progressBarFull {
-    height: 4.7rem;
-    width: 0%;
-    background-color: #3a3a3a;
+    margin-left: 1rem;
     
 }
