@@ -45,7 +45,7 @@ h1, h2, h3 {
     height: 10%;
     padding: 1rem;
     color: rgb(255, 255, 255);
-    background-color: rgba(92, 175, 176, 0.8);
+    background-color: rgb(92, 175, 176);
 }
 
 .option {
@@ -55,15 +55,14 @@ h1, h2, h3 {
     
 }
 
-.incorrect {
-    background-color: lightcoral;
-    color:rgb(255, 255, 255)
+#correct-score{
+    color: darkgreen;
 }
 
-.correct {
-    background-color: greenyellow;
-    color:rgb(255, 255, 255)
+#incorrect-score{
+    color: red;
 }
+
 #letUserKnowInteractively {
     display: flex;
     justify-content: center;

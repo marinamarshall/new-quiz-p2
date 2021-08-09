@@ -281,13 +281,13 @@ options.forEach(option => {
         const selectedAnswer = selectedOption.dataset["number"];
 
         if(selectedAnswer == currentQuestion.answer) {
-            option.parentNode.setAttribute("style", "background-color: #BCFFB9");
+            option.parentNode.setAttribute("style", "background-color: #90ee90");
             setTimeout(getQuestion, 2000);
             setTimeout(removeClass, 2000);
             incrementCorrectScoreDisplay();
             
         } else if (selectedAnswer !== currentQuestion.answer) {
-            option.parentNode.setAttribute("style", "background-color: #FE2727");
+            option.parentNode.setAttribute("style", "background-color: #ff0000");
             setTimeout(getQuestion, 2000);
             setTimeout(removeClass, 2000);
             incrementIncorrectScoreDisplay();
