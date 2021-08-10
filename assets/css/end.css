@@ -1,18 +1,181 @@
-.btn-end {
+p {
+    font-size: 2.4rem;
+}
+
+h1, h2, h3 {
+    padding: 5rem;
+}
+
+#letUserKnowInteractively > p {
+    font-size: 2.4rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.option-container {
+    padding: 1rem;
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    width: 50%;
+    font-size: 1.8rem;
+    border: 0.1rem solid rgb(46, 71, 87);
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.option:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1rem 0 rgba(92, 175, 176, 0.5);
+    transform: translate(-0.1rem);
+    transition: transform 200ms;
+}
+
+.prefix {
+    width:15%;
+    height: 10%;
+    padding: 1rem;
+    color: rgb(255, 255, 255);
+    background-color: rgb(92, 175, 176);
+}
+
+.option {
+    width: 100%;
+    padding: 1.5rem;
+    color: #3a3a3a;
+    
+}
+
+#correct-score{
+    color: darkgreen;
+}
+
+#incorrect-score{
+    color: red;
+}
+
+#letUserKnowInteractively {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+#progressOuterDiv {
+    border: 0.1rem solid rgb(72, 96, 115);
+    background-color: transparent;
+    width: 20rem;
+}
+
+#progressInnerDiv {
+    background-color: rgba(92, 175, 176, 0.8);
+    width:0%;
+    height: 7rem;
+}
+
+#score-area {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+.score-display {
+    text-align: center;
+    font-size: 5rem;
+    margin-left: 1rem;
+    
+}
+
+
+
+/* SORT THIS OUT */
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/font-size */
+/* https://teamtreehouse.com/community/what-is-the-difference-between-and-root-functionalities */
+
+/* Make root font size 10px*/
+:root {
+    font-size: 62.5%;
+    background-color: rgba(139, 190, 177, 0.3);
+}
+
+* {
+    color: #3a3a3a;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container > h1,h2 {
+    font-size: 5.4rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+h3 {
+    color: #3a3a3a;
+    font-size: 2.8rem;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+/* https://www.freecodecamp.org/news/learn-css-flexbox/ */
+
+.container {
+    height: 100vh;
+    width: 100wh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+}
+
+/*.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+*/
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
     text-align: center;
     font-size: 2.4rem;
     border: 1px solid rgb(46, 71, 87);
     border-radius: 4px;
-    padding: 1.5rem 1rem;
+    padding: 0.5rem;
     max-width: 100%;
-    margin-bottom: 2rem;
-    background-color: rgba(52, 71, 87, 0.3);
+    margin-top: 2.5rem;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
 }
 
-.btn-end:hover {
+.btn:hover {
     cursor: pointer;
     box-shadow: 0 0.4rem 1rem 0 rgba(92, 175, 176, 0.5);
     transform: translate(-0.1rem);
     transition: transform 200ms;
+}
+
+.fa-flask {
+    margin-top: 2rem;
+    font-size: 7.2rem;
 }

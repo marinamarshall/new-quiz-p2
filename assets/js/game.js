@@ -9,6 +9,8 @@
 // https://www.youtube.com/watch?v=BOQLbu_Crc0
 // https://www.youtube.com/watch?v=4bctmtuZVcM
 // https://www.youtube.com/watch?v=o3MF_JmQxYg
+// CI Love Maths "Updating The Scores" video
+//https://github.com/Code-Institute-Solutions/love-maths-2.0-sourcecode/blob/master/03-displaying-the-question-and-answer/01-displaying-the-addition-question/index.html
 
 /* Declare myQuestions array */ 
 let myQuestions = [
