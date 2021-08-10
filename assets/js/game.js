@@ -230,7 +230,7 @@ let myQuestions = [
 
 let correctScoreText = document.getElementById("correct-score");
 let incorrectScoreText = document.getElementById("incorrect-score");
-/* const questionCounterText = document.getElementById("questionCounter"); */ 
+let questionCounterText = document.getElementById("questionCounter");
 let progressOuterSpan = document.getElementById("progressOuterDiv");
 let progressInnerSpan = document.getElementById("progressInnerDiv");    
 let quizContainer= document.getElementById("quiz-container");
@@ -243,7 +243,6 @@ let acceptingSubmissions = false;
 let questionCounter = 0;
 let score = 0;
 const maxQuestions= 10;
-const correctCount = 10;
 
 function beginQuiz (){
     availableQuestions = [...myQuestions];
@@ -257,7 +256,8 @@ function getQuestion () {
     questionCounter++;
     questionCounterText.innerText = `${questionCounter}/${maxQuestions}`;
 
-    if (questionCounter > maxQuestions || availableQuestions.length == 0) {
+    if (questionCounter >= maxQuestions || availableQuestions.length == 0) {
+        const score = localStorage.getItem('score');
         localStorage.setItem("mostRecentScore", score);
         endGame();
     } else {
@@ -329,7 +329,7 @@ function incrementIncorrectScoreDisplay(){
 }
 
 function endGame() {
-        window.location.href = "end.html";
+    window.location.href = "end.html";
 }
 
 beginQuiz();

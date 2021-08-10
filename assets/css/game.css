@@ -3,7 +3,7 @@ p {
 }
 
 h1, h2, h3 {
-    padding: 5rem;
+    padding: 2rem;
 }
 
 #letUserKnowInteractively > p {
@@ -50,7 +50,7 @@ h1, h2, h3 {
 
 .option {
     width: 100%;
-    padding: 1.5rem;
+    padding: 1rem;
     color: #3a3a3a;
     
 }
@@ -78,7 +78,7 @@ h1, h2, h3 {
 
 #progressInnerDiv {
     background-color: rgba(92, 175, 176, 0.8);
-    width:0%;
+    width:10%;
     height: 7rem;
 }
 
