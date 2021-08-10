@@ -248,16 +248,18 @@ function beginQuiz (){
     availableQuestions = [...myQuestions];
     questionCounter = 0;
     score = 0;
-    getQuestion();   
+    getQuestion(); 
+    
+    localStorage.setItem("mostRecentScore", 0);
 }
 
 function getQuestion () {
-    score++;
     questionCounter++;
     questionCounterText.innerText = `${questionCounter}/${maxQuestions}`;
 
     if (questionCounter >= maxQuestions || availableQuestions.length == 0) {
-        const score = localStorage.getItem('score');
+        console.log(score)
+        // const localScore = localStorage.getItem('mostRecent');
         localStorage.setItem("mostRecentScore", score);
         endGame();
     } else {
@@ -284,6 +286,7 @@ options.forEach(option => {
 
         if(selectedAnswer == currentQuestion.answer) {
             option.parentNode.setAttribute("style", "background-color: #90ee90");
+            score++;
             setTimeout(getQuestion, 2000);
             setTimeout(removeClass, 2000);
             incrementCorrectScoreDisplay();
