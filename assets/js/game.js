@@ -231,6 +231,7 @@ let myQuestions = [
 let correctScoreText = document.getElementById("correct-score");
 let incorrectScoreText = document.getElementById("incorrect-score");
 let questionCounterText = document.getElementById("questionCounter");
+let questionCounter = 0;
 let progressOuterSpan = document.getElementById("progressOuterDiv");
 let progressInnerSpan = document.getElementById("progressInnerDiv");    
 let quizContainer= document.getElementById("quiz-container");
@@ -240,7 +241,6 @@ let options = Array.from(document.getElementsByClassName("option"));
 let currentQuestion = {};
 let availableQuestions = [];
 let acceptingSubmissions = false;
-let questionCounter = 0;
 let score = 0;
 const maxQuestions= 10;
 
@@ -252,7 +252,7 @@ function beginQuiz (){
 }
 
 function getQuestion () {
-
+    score++;
     questionCounter++;
     questionCounterText.innerText = `${questionCounter}/${maxQuestions}`;
 
